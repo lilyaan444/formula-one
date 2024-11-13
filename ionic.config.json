@@ -1,0 +1,7 @@
+{
+  "name": "formule-one",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

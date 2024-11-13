@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des Pilotes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let driver of drivers"
+      (click)="showDriverOptions(driver)"
+    >
+      <ion-label>
+        <h2>{{ driver.givenName }} {{ driver.familyName }}</h2>
+        <p>Nationalité: {{ driver.nationality }}</p>
+        <p>Date de naissance: {{ driver.dateOfBirth }}</p>
+        <p>Numéro: {{ driver.permanentNumber }}</p>
+      </ion-label>
+      <ion-button (click)="addToFavorites(driver)" fill="clear">
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addDriver()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

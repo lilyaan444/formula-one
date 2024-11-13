@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Liste des courses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let race of races">
+      <ion-label>
+        <h2>{{ race.raceName }}</h2>
+        <p>Pays: {{ race.Circuit.Location.country }}</p>
+        <p>Longueur: {{ race.Circuit.Location.long }} Km</p>
+      </ion-label>
+      <ion-button (click)="addToFavorites(race)" fill="clear">
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

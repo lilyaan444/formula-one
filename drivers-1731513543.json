@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "format": "JSON",
+    "version": "1.1.0",
+    "projectId": "f1ionic",
+    "resourcePath": ["drivers"],
+    "recursive": false,
+    "creationTime": 1731513546,
+    "app": "firefoo"
+  },
+  "data": {
+    "0ktlRDxviTJedMFrRZ8V": {
+      "code": "MUL",
+      "dateOfBirth": "2004-04-02",
+      "driverId": "qf7baqhw1",
+      "familyName": "MULLER",
+      "givenName": "Lilyan",
+      "id": "0ktlRDxviTJedMFrRZ8V",
+      "isFavorite": false,
+      "nationality": "Français",
+      "permanentNumber": "04",
+      "url": "",
+      "__collections__": {}
+    },
+    "hamilton": {
+      "code": "HAM",
+      "dateOfBirth": "1985-01-07",
+      "driverId": "hamilton",
+      "familyName": "Hamilton",
+      "givenName": "Lewis",
+      "id": "hamilton",
+      "isFavorite": true,
+      "nationality": "British",
+      "permanentNumber": "44",
+      "url": "http://en.wikipedia.org/wiki/Lewis_Hamilton",
+      "__collections__": {}
+    },
+    "verstappen": {
+      "code": "VER",
+      "dateOfBirth": "1997-09-30",
+      "driverId": "verstappen",
+      "familyName": "Verstappen",
+      "givenName": "Max",
+      "id": "verstappen",
+      "isFavorite": true,
+      "nationality": "Dutch",
+      "permanentNumber": "33",
+      "url": "http://en.wikipedia.org/wiki/Max_Verstappen",
+      "__collections__": {}
+    },
+    "leclerc": {
+      "code": "LEC",
+      "dateOfBirth": "1997-10-16",
+      "driverId": "leclerc",
+      "familyName": "Leclerc",
+      "givenName": "Charles",
+      "id": "leclerc",
+      "isFavorite": false,
+      "nationality": "Monégasque",
+      "permanentNumber": "16",
+      "url": "http://en.wikipedia.org/wiki/Charles_Leclerc",
+      "__collections__": {}
+    },
+    "perez": {
+      "code": "PER",
+      "dateOfBirth": "1990-01-26",
+      "driverId": "perez",
+      "familyName": "Pérez",
+      "givenName": "Sergio",
+      "id": "perez",
+      "isFavorite": false,
+      "nationality": "Mexican",
+      "permanentNumber": "11",
+      "url": "http://en.wikipedia.org/wiki/Sergio_Pérez",
+      "__collections__": {}
+    },
+    "alonso": {
+      "code": "ALO",
+      "dateOfBirth": "1981-07-29",
+      "driverId": "alonso",
+      "familyName": "Alonso",
+      "givenName": "Fernando",
+      "id": "alonso",
+      "isFavorite": true,
+      "nationality": "Spanish",
+      "permanentNumber": "14",
+      "url": "http://en.wikipedia.org/wiki/Fernando_Alonso",
+      "__collections__": {}
+    },
+    "norris": {
+      "code": "NOR",
+      "dateOfBirth": "1999-11-13",
+      "driverId": "norris",
+      "familyName": "Norris",
+      "givenName": "Lando",
+      "id": "norris",
+      "isFavorite": false,
+      "nationality": "British",
+      "permanentNumber": "4",
+      "url": "http://en.wikipedia.org/wiki/Lando_Norris",
+      "__collections__": {}
+    },
+    "sainz": {
+      "code": "SAI",
+      "dateOfBirth": "1994-09-01",
+      "driverId": "sainz",
+      "familyName": "Sainz",
+      "givenName": "Carlos",
+      "id": "sainz",
+      "isFavorite": false,
+      "nationality": "Spanish",
+      "permanentNumber": "55",
+      "url": "http://en.wikipedia.org/wiki/Carlos_Sainz_Jr.",
+      "__collections__": {}
+    },
+    "russell": {
+      "code": "RUS",
+      "dateOfBirth": "1998-02-15",
+      "driverId": "russell",
+      "familyName": "Russell",
+      "givenName": "George",
+      "id": "russell",
+      "isFavorite": false,
+      "nationality": "British",
+      "permanentNumber": "63",
+      "url": "http://en.wikipedia.org/wiki/George_Russell_(racing_driver)",
+      "__collections__": {}
+    },
+    "bottas": {
+      "code": "BOT",
+      "dateOfBirth": "1989-08-28",
+      "driverId": "bottas",
+      "familyName": "Bottas",
+      "givenName": "Valtteri",
+      "id": "bottas",
+      "isFavorite": false,
+      "nationality": "Finnish",
+      "permanentNumber": "77",
+      "url": "http://en.wikipedia.org/wiki/Valtteri_Bottas",
+      "__collections__": {}
+    }
+  }
+}

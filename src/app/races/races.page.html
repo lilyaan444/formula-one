@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Liste des courses</ion-title>
+    <ion-title>Liste des Courses</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterRaces()"
+    placeholder="Rechercher une course..."
+  ></ion-searchbar>
+
   <ion-list>
-    <ion-item *ngFor="let race of races">
+    <ion-item
+      *ngFor="let race of filteredRaces"
+      (click)="showRaceOptions(race)"
+    >
+      <ion-icon
+        *ngIf="race.isFavorite"
+        slot="start"
+        name="heart"
+        color="danger"
+        (click)="toggleFavorite(race)"
+      ></ion-icon>
+      <ion-icon
+        *ngIf="!race.isFavorite"
+        slot="start"
+        name="heart-outline"
+        (click)="toggleFavorite(race)"
+      ></ion-icon>
       <ion-label>
         <h2>{{ race.raceName }}</h2>
         <p>Pays: {{ race.Circuit.Location.country }}</p>
         <p>Longueur: {{ race.Circuit.Location.long }} Km</p>
       </ion-label>
-      <ion-button (click)="addToFavorites(race)" fill="clear">
-        <ion-icon name="heart-outline"></ion-icon>
-      </ion-button>
     </ion-item>
   </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addRace()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,13 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>favorites</ion-title>
+    <ion-title class="header-title">Favoris</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">favorites</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="favorites-content">
+  <ion-list>
+    <ion-list-header class="list-header">Courses Favorites</ion-list-header>
+    <ion-item *ngFor="let race of races" class="favorite-item">
+      <ion-label>
+        <h2 class="item-title">{{ race.raceName }}</h2>
+        <p class="item-detail">Pays: {{ race.Circuit.Location.country }}</p>
+        <p class="item-detail">Longueur: {{ race.Circuit.Location.long }} Km</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-list-header class="list-header">Pilotes Favoris</ion-list-header>
+    <ion-item *ngFor="let driver of drivers" class="favorite-item">
+      <ion-label>
+        <h2 class="item-title">
+          {{ driver.givenName }} {{ driver.familyName }}
+        </h2>
+        <p class="item-detail">Nationalité: {{ driver.nationality }}</p>
+        <p class="item-detail">Date de naissance: {{ driver.dateOfBirth }}</p>
+        <p class="item-detail">Numéro: {{ driver.permanentNumber }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="downloadFavorite()">
+      <ion-icon name="download-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

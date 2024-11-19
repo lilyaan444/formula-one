@@ -5,20 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterDrivers()"
+    placeholder="Rechercher un pilote..."
+  ></ion-searchbar>
+
   <ion-list>
     <ion-item
-      *ngFor="let driver of drivers"
+      *ngFor="let driver of filteredDrivers"
       (click)="showDriverOptions(driver)"
     >
+      <ion-icon
+        *ngIf="driver.isFavorite"
+        slot="start"
+        name="heart"
+        color="danger"
+        (click)="toggleFavorite(driver)"
+      ></ion-icon>
+      <ion-icon
+        *ngIf="!driver.isFavorite"
+        slot="start"
+        name="heart-outline"
+        (click)="toggleFavorite(driver)"
+      ></ion-icon>
       <ion-label>
         <h2>{{ driver.givenName }} {{ driver.familyName }}</h2>
         <p>Nationalité: {{ driver.nationality }}</p>
         <p>Date de naissance: {{ driver.dateOfBirth }}</p>
         <p>Numéro: {{ driver.permanentNumber }}</p>
       </ion-label>
-      <ion-button (click)="addToFavorites(driver)" fill="clear">
-        <ion-icon name="heart-outline"></ion-icon>
-      </ion-button>
     </ion-item>
   </ion-list>
 

@@ -8,4 +8,6 @@ export interface Driver {
   nationality: string;
   permanentNumber: string;
   url: string;
+  isFavorite: boolean;
+  __collections__?: Record<string, unknown>;
 }

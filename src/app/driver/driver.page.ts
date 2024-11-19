@@ -10,6 +10,8 @@ import { DriverService } from '../service/driver.service';
 })
 export class DriverPage implements OnInit {
   drivers: Driver[] = [];
+  filteredDrivers: Driver[] = [];
+  searchTerm: string = '';
 
   constructor(
     private driverService: DriverService,
@@ -23,14 +25,29 @@ export class DriverPage implements OnInit {
   loadDrivers() {
     this.driverService.getDrivers().subscribe((data) => {
       this.drivers = data;
+      this.filteredDrivers = data;
     });
   }
 
-  addToFavorites(driver: any) {
-    console.log('ajouter');
+  filterDrivers() {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredDrivers = this.drivers.filter((driver) => {
+      return (
+        driver.givenName.toLowerCase().includes(term) ||
+        driver.familyName.toLowerCase().includes(term) ||
+        driver.nationality.toLowerCase().includes(term) ||
+        driver.permanentNumber.toLowerCase().includes(term) ||
+        driver.dateOfBirth.toLowerCase().includes(term)
+      );
+    });
   }
 
-  async showDriverOptions(driver: any) {
+  toggleFavorite(driver: Driver) {
+    const updatedDriver = { ...driver, isFavorite: !driver.isFavorite };
+    this.driverService.updateDriver(driver.id, updatedDriver);
+  }
+
+  async showDriverOptions(driver: Driver) {
     const alert = await this.alertController.create({
       header: `${driver.givenName} ${driver.familyName}`,
       buttons: [
@@ -48,12 +65,17 @@ export class DriverPage implements OnInit {
           },
         },
         {
+          text: 'Ajouter/Retirer des favoris',
+          handler: () => {
+            this.toggleFavorite(driver);
+          },
+        },
+        {
           text: 'Annuler',
           role: 'cancel',
         },
       ],
     });
-
     await alert.present();
   }
 
@@ -96,6 +118,12 @@ export class DriverPage implements OnInit {
           placeholder: 'Numéro permanent',
           value: driver.permanentNumber,
         },
+        {
+          name: 'url',
+          type: 'text',
+          placeholder: 'URL',
+          value: driver.url,
+        },
       ],
       buttons: [
         {
@@ -106,7 +134,7 @@ export class DriverPage implements OnInit {
           text: 'Sauvegarder',
           handler: (data) => {
             const updatedDriver = { ...driver, ...data };
-            this.driverService.updateDriver(driver.id, updatedDriver);
+            this.driverService.updateDriver(driver.driverId, updatedDriver);
           },
         },
       ],
@@ -152,6 +180,11 @@ export class DriverPage implements OnInit {
           type: 'text',
           placeholder: 'Numéro permanent',
         },
+        {
+          name: 'url',
+          type: 'text',
+          placeholder: 'URL',
+        },
       ],
       buttons: [
         {
@@ -164,7 +197,7 @@ export class DriverPage implements OnInit {
             const newDriver: Driver = {
               ...data,
               driverId: Math.random().toString(36).substr(2, 9),
-              url: '',
+              url: data.url || '',
             };
             this.driverService.addDriver(newDriver);
           },

@@ -15,6 +15,14 @@ export class DriverService {
       .valueChanges({ idField: 'id' });
   }
 
+  getDriversFavorite(): Observable<Driver[]> {
+    return this.firestore
+      .collection<Driver>('drivers', (ref) =>
+        ref.where('isFavorite', '==', true)
+      )
+      .valueChanges({ idField: 'id' });
+  }
+
   addDriver(driver: Driver) {
     return this.firestore.collection('drivers').add(driver);
   }
@@ -25,5 +33,19 @@ export class DriverService {
 
   deleteDriver(id: string) {
     return this.firestore.collection('drivers').doc(id).delete();
+  }
+
+  addToFavorites(driver: Driver) {
+    return this.firestore.collection('favorites').doc(driver.id).set(driver);
+  }
+
+  removeFromFavorites(id: string) {
+    return this.firestore.collection('favorites').doc(id).delete();
+  }
+
+  getFavorites(): Observable<Driver[]> {
+    return this.firestore
+      .collection<Driver>('favorites')
+      .valueChanges({ idField: 'id' });
   }
 }

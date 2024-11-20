@@ -16,6 +16,7 @@ Cette application mobile est développée en **Ionic Angular** avec un backend *
 - ❌ **Supprimer** les pilotes et courses
 - ⭐ **Ajouter aux favoris** : marquer les pilotes et courses favoris pour un accès rapide
 - 🔄 **Synchronisation en temps réel** grâce à Firebase
+- 🔎 **Bar de recherche** Rechercher rapidement les pilotes/courses
 
 ---
 

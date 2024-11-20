@@ -1,19 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Liste des Courses</ion-title>
+    <ion-title class="header-title">Liste des Courses</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="races-content">
   <ion-searchbar
     [(ngModel)]="searchTerm"
     (ionInput)="filterRaces()"
     placeholder="Rechercher une course..."
+    class="custom-searchbar"
   ></ion-searchbar>
 
   <ion-list>
     <ion-item
       *ngFor="let race of filteredRaces"
+      class="race-item"
       (click)="showRaceOptions(race)"
     >
       <ion-icon
@@ -30,9 +32,13 @@
         (click)="toggleFavorite(race)"
       ></ion-icon>
       <ion-label>
-        <h2>{{ race.raceName }}</h2>
-        <p>Pays: {{ race.Circuit.Location.country }}</p>
-        <p>Longueur: {{ race.Circuit.Location.long }} Km</p>
+        <h2 class="item-title">{{ race.raceName }}</h2>
+        <ion-note class="item-note"
+          >Pays: {{ race.Circuit.Location.country }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Longueur: {{ race.Circuit.Location.long }} Km</ion-note
+        >
       </ion-label>
     </ion-item>
   </ion-list>

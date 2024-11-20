@@ -10,8 +10,12 @@
     <ion-item *ngFor="let race of races" class="favorite-item">
       <ion-label>
         <h2 class="item-title">{{ race.raceName }}</h2>
-        <p class="item-detail">Pays: {{ race.Circuit.Location.country }}</p>
-        <p class="item-detail">Longueur: {{ race.Circuit.Location.long }} Km</p>
+        <ion-note class="item-note"
+          >Pays: {{ race.Circuit.Location.country }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Longueur: {{ race.Circuit.Location.long }} Km</ion-note
+        >
       </ion-label>
     </ion-item>
 
@@ -21,12 +25,19 @@
         <h2 class="item-title">
           {{ driver.givenName }} {{ driver.familyName }}
         </h2>
-        <p class="item-detail">Nationalité: {{ driver.nationality }}</p>
-        <p class="item-detail">Date de naissance: {{ driver.dateOfBirth }}</p>
-        <p class="item-detail">Numéro: {{ driver.permanentNumber }}</p>
+        <ion-note class="item-note"
+          >Nationalité: {{ driver.nationality }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Date de naissance: {{ driver.dateOfBirth }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Numéro: {{ driver.permanentNumber }}</ion-note
+        >
       </ion-label>
     </ion-item>
   </ion-list>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="downloadFavorite()">
       <ion-icon name="download-outline"></ion-icon>

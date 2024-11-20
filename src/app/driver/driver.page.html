@@ -1,19 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Liste des Pilotes</ion-title>
+    <ion-title class="header-title">Liste des Pilotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="drivers-content">
   <ion-searchbar
     [(ngModel)]="searchTerm"
     (ionInput)="filterDrivers()"
     placeholder="Rechercher un pilote..."
+    class="custom-searchbar"
   ></ion-searchbar>
 
   <ion-list>
     <ion-item
       *ngFor="let driver of filteredDrivers"
+      class="driver-item"
       (click)="showDriverOptions(driver)"
     >
       <ion-icon
@@ -30,10 +32,18 @@
         (click)="toggleFavorite(driver)"
       ></ion-icon>
       <ion-label>
-        <h2>{{ driver.givenName }} {{ driver.familyName }}</h2>
-        <p>Nationalité: {{ driver.nationality }}</p>
-        <p>Date de naissance: {{ driver.dateOfBirth }}</p>
-        <p>Numéro: {{ driver.permanentNumber }}</p>
+        <h2 class="item-title">
+          {{ driver.givenName }} {{ driver.familyName }}
+        </h2>
+        <ion-note class="item-note"
+          >Nationalité: {{ driver.nationality }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Date de naissance: {{ driver.dateOfBirth }}</ion-note
+        >
+        <ion-note class="item-note"
+          >Numéro: {{ driver.permanentNumber }}</ion-note
+        >
       </ion-label>
     </ion-item>
   </ion-list>

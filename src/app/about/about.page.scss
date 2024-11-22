@@ -1,0 +1,34 @@
+ion-content {
+  --background: #f8f9fa; /* Fond clair */
+  display: flex; /* Utiliser flexbox */
+  justify-content: center; /* Centrer verticalement */
+  align-items: center; /* Centrer horizontalement */
+  padding: 16px;
+
+  .about-content {
+    text-align: center; /* Centre le texte */
+    margin: 0 auto; /* Ajoute des marges automatiques */
+    max-width: 600px; /* Limite la largeur pour un meilleur rendu */
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #343a40; /* Gris foncé */
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057; /* Gris intermédiaire */
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+
+  p:last-child {
+    font-style: italic;
+    text-align: center;
+    color: #6c757d; /* Gris clair */
+  }
+}

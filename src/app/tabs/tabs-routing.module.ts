@@ -30,6 +30,16 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'about',
+        loadChildren: () =>
+          import('../about/about.module').then((m) => m.AboutPageModule),
+      },
+      {
+        path: 'map',
+        loadChildren: () =>
+          import('../map/map.module').then((m) => m.MapPageModule),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

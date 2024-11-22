@@ -32,6 +32,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./races/races.module').then((m) => m.RacesPageModule),
   },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutPageModule),
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
 ];
 
 @NgModule({

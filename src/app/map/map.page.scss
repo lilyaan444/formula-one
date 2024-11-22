@@ -1,0 +1,30 @@
+ion-content {
+  --background: #f4f4f4; /* Couleur de fond douce */
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Couleur neutre */
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  #map {
+    margin: 0 auto;
+    border: 2px solid #ccc; /* Bordure légère */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    overflow: hidden; /* S'assure que la carte ne déborde pas */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #map {
+    height: calc(100vh - 150px);
+  }
+}

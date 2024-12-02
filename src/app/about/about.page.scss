@@ -9,6 +9,17 @@ ion-content {
     text-align: center; /* Centre le texte */
     margin: 0 auto; /* Ajoute des marges automatiques */
     max-width: 600px; /* Limite la largeur pour un meilleur rendu */
+    background: white; /* Fond blanc pour le contenu */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 20px; /* Espacement interne */
+  }
+
+  .header-image {
+    width: 100%; /* Prend toute la largeur */
+    height: auto; /* Garde les proportions */
+    border-radius: 10px; /* Coins arrondis */
+    margin-bottom: 16px; /* Espacement en bas */
   }
 
   h2 {
@@ -30,5 +41,9 @@ ion-content {
     font-style: italic;
     text-align: center;
     color: #6c757d; /* Gris clair */
+  }
+
+  ion-button {
+    margin-top: 20px; /* Espacement au-dessus du bouton */
   }
 }

@@ -56,7 +56,7 @@ Cette application mobile est développée en **Ionic Angular** avec un backend *
 
 ## 📋 Utilisation
 
-- **Affichage** : Parcourez les pilotes et courses dans l'app.
+- **Affichage** : Parcourez les pilotes, courses et l'emplacement des GP dans l'app.
 - **Favoris** : Ajoutez vos pilotes et courses préférés aux favoris.
 - **Gestion CRUD** : Ajoutez, modifiez ou supprimez des pilotes et des courses à tout moment.
 
